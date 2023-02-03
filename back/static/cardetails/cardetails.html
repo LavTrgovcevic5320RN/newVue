@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car details</title>
+    <link rel="stylesheet" href="cardetails.css">
+    <script src="helper.js"></script>
+    <script src="cardetails.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="navigation">
+        <h2>Car Details:</h2>
+        <a href="/admin/cars">Cars</a>
+        <a href="/admin/cardetails">Car details</a>
+        <a href="/admin/scooters">Scooters</a>
+        <a href="/admin/scooterdetails">Scooter details</a>
+        <a href="/admin/reservations">Reservations</a>
+    </div>
+    <div class="navigation 2">
+        <a href="/admin/bicycles">Bicycles</a>
+        <a href="/admin/bicycledetails">Bicycle details</a>
+        <a href="/admin/motorcycles">Motorcycles</a>
+        <a href="/admin/users">Users</a>
+    </div>
+    <hr>
+    <ul id="detailsList"></ul>
+    <button onclick="showCreateForm()">Add new</button>
+    <div id="createDetailsForm">
+        <label for="doors">Doors:</label>
+        <input type="number" placeholder="Enter number of doors" name="doors" id="createDoors" required min="1" max="10">
+
+        <label for="fuel">Fuel type:</label>
+        <input type="text" placeholder="Enter fuel type" name="fuel" id="createFuel" required maxlength="20">
+
+        <label for="transmission">Transmission:</label>
+        <input type="text" placeholder="Enter transmission" name="transmission" id="createTransmission" required maxlength="20">
+
+        <button onclick="addDetails()" class="submitButton">Add</button>
+    </div>
+
+    <div id="editDetailsForm">
+        <label for="doors">Doors:</label>
+        <input type="number" placeholder="Enter number of doors" name="doors" id="editDoors" required min="1" max="10">
+
+        <label for="fuel">Fuel type:</label>
+        <input type="text" placeholder="Enter fuel type" name="fuel" id="editFuel" required maxlength="20">
+
+        <label for="transmission">Transmission:</label>
+        <input type="text" placeholder="Enter transmission" name="transmission" id="editTransmission" required maxlength="20">
+    </div>
+</body>
+</html>

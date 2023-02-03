@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scooters</title>
+    <link rel="stylesheet" href="scooters.css">
+    <script src="helper.js"></script>
+    <script src="scooters.js"></script>
+</head>
+<body onload="init()">
+    <div class="navigation">
+        <h2>Scooters:</h2>
+        <a href="/admin/cars">Cars</a>
+        <a href="/admin/cardetails">Car details</a>
+        <a href="/admin/scooterdetails">Scooter details</a>
+        <a href="/admin/reservations">Reservations</a>
+    </div>
+    <div class="navigation 2">
+        <a href="/admin/bicycles">Bicycles</a>
+        <a href="/admin/bicycledetails">Bicycle details</a>
+        <a href="/admin/motorcycles">Motorcycles</a>
+        <a href="/admin/motorcycledetails">Motorcycle details</a>
+        <a href="/admin/users">Users</a>
+    </div>
+    <hr>
+    <ul id="scooterList"></ul>
+    <button onclick="showCreateForm()">Add new</button>
+    <div id="createScooterForm">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" placeholder="Enter manufacturer" name="manufacturer" id="createManufacturer" required maxlength="30">
+
+        <label for="model">Model:</label>
+        <input type="text" placeholder="Enter model" name="model" id="createModel" required maxlength="50">
+
+        <label for="year">Year:</label>
+        <input type="number" placeholder="Enter year" name="year" id="createYear" required min="1900">
+
+        <label for="detailsId">Details id:</label>
+        <input type="number" placeholder="Enter details id" name="detailsId" id="createDetailsId" required min="1">
+
+        <label for="price">Price per day:</label>
+        <input type="number" placeholder="Enter price" name="price" id="createPrice" required min="1" step=".01">
+
+        <button onclick="addScooter()">Add</button>
+    </div>
+
+    <div id="editScooterForm">
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" placeholder="Enter manufacturer" name="manufacturer" id="editManufacturer" required maxlength="30">
+
+        <label for="model">Model:</label>
+        <input type="text" placeholder="Enter model" name="model" id="editModel" required maxlength="50">
+
+        <label for="year">Year:</label>
+        <input type="number" placeholder="Enter year" name="year" id="editYear" required min="1900">
+
+        <label for="detailsId">Details id:</label>
+        <input type="number" placeholder="Enter details id" name="detailsId" id="editDetailsId" required min="1">
+
+        <label for="price">Price per day:</label>
+        <input type="number" placeholder="Enter price" name="price" id="editPrice" required min="1" step=".01">
+    </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Details of Scooter #<span id="popupBoxTitle"></span></h2>
+            <a class="close" href="#">&times;</a>
+            <ul>
+                <li>Max weight: <span id="detailsMaxWeight"></span></li>
+                <li>Electric: <span id="detailsElectric"></span></li>
+                <li>Length: <span id="detailsLength"></span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

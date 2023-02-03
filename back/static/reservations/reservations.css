@@ -1,0 +1,12 @@
+#createReservationForm {
+    display: none;
+}
+
+#editReservationForm {
+    display: none;
+}
+
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background: #55cfef;
+}

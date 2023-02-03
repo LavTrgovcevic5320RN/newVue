@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link rel="stylesheet" href="reservations.css">
+    <script src="helper.js"></script>
+    <script src="reservations.js"></script>
+</head>
+<body onload="init()">
+    <div class="navigation">
+        <h2>Reservations:</h2>
+        <a href="/admin/cars">Cars</a>
+        <a href="/admin/cardetails">Car details</a>
+        <a href="/admin/scooters">Scooters</a>
+        <a href="/admin/scooterdetails">Scooter details</a>
+    </div>
+    <div class="navigation 2">
+        <a href="/admin/bicycles">Bicycles</a>
+        <a href="/admin/bicycledetails">Bicycle details</a>
+        <a href="/admin/motorcycles">Motorcycles</a>
+        <a href="/admin/motorcycledetails">Motorcycle details</a>
+        <a href="/admin/users">Users</a>
+    </div>
+    <hr>
+    <ul id="reservationList"></ul>
+    <button onclick="showCreateForm()">Add new</button>
+    <div id="createReservationForm">
+        <label for="startDate">Start date:</label>
+        <input type="date" placeholder="Enter start date" name="startDate" id="createStartDate" required>
+
+        <label for="endDate">End date:</label>
+        <input type="date" placeholder="Enter end date" name="endDate" id="createEndDate" required>
+
+        <label for="carId">Car ID:</label>
+        <input type="number" placeholder="Enter car id" name="carId" id="createCarId" required min="1">
+
+        <label for="bicycleId">Bicycle ID:</label>
+        <input type="number" placeholder="Enter bicycle id" name="bicycleId" id="createBicycleId" required min="1">
+
+        <label for="scooterId">Scooter ID:</label>
+        <input type="number" placeholder="Enter scooter id" name="scooterId" id="createScooterId" required min="1">
+
+        <label for="motorcycleId">Motorcycle ID:</label>
+        <input type="number" placeholder="Enter motorcycle id" name="motorcycleId" id="createMotorcycleId" required min="1">
+
+        <label for="userId">User ID:</label>
+        <input type="number" placeholder="Enter user id" name="userId" id="createUserId" required min="1">
+
+        <button onclick="addReservation()">Add</button>
+    </div>
+
+    <div id="editReservationForm">
+        <label for="startDate">Start date:</label>
+        <input type="date" placeholder="Enter start date" name="startDate" id="editStartDate" required>
+
+        <label for="endDate">End date:</label>
+        <input type="date" placeholder="Enter end date" name="endDate" id="editEndDate" required>
+
+        <label for="carId">Car ID:</label>
+        <input type="number" placeholder="Enter car id" name="carId" id="editCarId" required min="1">
+
+        <label for="bicycleId">Bicycle ID:</label>
+        <input type="number" placeholder="Enter bicycle id" name="bicycleId" id="editBicycleId" required min="1">
+
+        <label for="scooterId">Scooter ID:</label>
+        <input type="number" placeholder="Enter scooter id" name="scooterId" id="editScooterId" required min="1">
+
+        <label for="motorcycleId">Motorcycle ID:</label>
+        <input type="number" placeholder="Enter motorcycle id" name="motorcycleId" id="editMotorcycleId" required min="1">
+
+        <label for="userId">User ID:</label>
+        <input type="number" placeholder="Enter user id" name="userId" id="editUserId" required min="1">
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicycles</title>
+    <link rel="stylesheet" href="bicycledetails.css">
+    <script src="helper.js"></script>
+    <script src="bicycledetails.js"></script>
+</head>
+<body onload="init()">
+    <div class="navigation">
+        <h2>Bicycle Details:</h2>
+        <a href="/admin/cars">Cars</a>
+        <a href="/admin/cardetails">Car Details</a>
+        <a href="/admin/scooters">Scooters</a>
+        <a href="/admin/scooterdetails">Scooter details</a>
+        <a href="/admin/reservations">Reservations</a>
+    </div>
+    <div class="navigation 2">
+        <a href="/admin/bicycles">Bicycles</a>
+        <a href="/admin/motorcycles">Motorcycles</a>
+        <a href="/admin/motorcycledetails">Motorcycle details</a>
+        <a href="/admin/users">Users</a>
+    </div>
+    <hr>
+    <ul id="detailsList"></ul>
+    <button onclick="showCreateForm()">Add new</button>
+    <div id="createDetailsForm">
+        <label for="wheels">Wheels:</label>
+        <input type="number" placeholder="Enter number of wheels" name="wheels" id="createWheels" required min="1" max="10">
+
+        <label for="electric">Electric:</label>
+        <input type="text" placeholder="Enter if bicycle is electric" name="electric" id="createElectric" required maxlength="20">
+
+        <label for="seats">Seats:</label>
+        <input type="text" placeholder="Enter seats" name="seats" id="createSeats" required maxlength="20">
+
+        <button onclick="addDetails()" class="submitButton">Add</button>
+    </div>
+
+    <div id="editDetailsForm">
+        <label for="wheels">Wheels:</label>
+        <input type="number" placeholder="Enter number of wheels" name="wheels" id="editWheels" required min="1" max="10">
+
+        <label for="electric">Electric:</label>
+        <input type="text" placeholder="Enter if bicycle electric" name="electric" id="editElectric" required maxlength="20">
+
+        <label for="seats">Seats:</label>
+        <input type="text" placeholder="Enter seats" name="seats" id="editSeats" required maxlength="20">
+    </div>
+</body>
+</html>

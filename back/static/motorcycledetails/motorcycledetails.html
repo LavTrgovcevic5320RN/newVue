@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorcycle details</title>
+    <link rel="stylesheet" href="motorcycledetails.css">
+    <script src="helper.js"></script>
+    <script src="motorcycledetails.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="navigation">
+        <h2>Motorcycle Details:</h2>
+        <a href="/admin/scooters">Scooters</a>
+        <a href="/admin/scooterdetails">Scooter details</a>
+        <a href="/admin/reservations">Reservations</a>
+        <a href="/admin/cardetails">Car details</a>
+        <a href="/admin/users">Users</a>
+    </div>
+    <div class="navigation 2">
+        <a href="/admin/bicycles">Bicycles</a>
+        <a href="/admin/bicycledetails">Bicycle details</a>
+        <a href="/admin/motorcycles">Motorcycles</a>
+        <a href="/admin/motorcycledetails">Motorcycle details</a>
+    </div>
+    <hr>
+    <ul id="detailsList"></ul>
+    <button onclick="showCreateForm()">Add new</button>
+    <div id="createDetailsForm">
+        <label for="wheels">Wheels:</label>
+        <input type="number" placeholder="Enter number of wheels" name="wheels" id="createWheels" required min="1" max="10">
+
+        <label for="seats">Seats:</label>
+        <input type="number" placeholder="Enter number of seats" name="seats" id="createSeats" required maxlength="20">
+
+        <label for="maxSpeed">Max speed:</label>
+        <input type="number" placeholder="Enter max speed" name="maxSpeed" id="createMaxSpeed" required maxlength="20">
+
+        <label for="maxWeight">Max weight:</label>
+        <input type="number" placeholder="Enter max weight" name="maxWeight" id="createMaxWeight" required maxlength="20">
+
+        <label for="type">Type:</label>
+        <input type="text" placeholder="Enter type of motocycle" name="type" id="createType" required maxlength="20">
+
+        <button onclick="addDetails()" class="submitButton">Add</button>
+    </div>
+
+    <div id="editDetailsForm">
+        <label for="wheels">Wheels:</label>
+        <input type="number" placeholder="Enter number of wheels" name="wheels" id="editWheels" required min="1" max="10">
+
+        <label for="seats">Seats:</label>
+        <input type="number" placeholder="Enter number of seats" name="seats" id="editSeats" required maxlength="20">
+
+        <label for="maxSpeed">Max speed:</label>
+        <input type="number" placeholder="Enter max speed" name="maxSpeed" id="editMaxSpeed" required maxlength="20">
+
+        <label for="maxWeight">Max weight:</label>
+        <input type="number" placeholder="Enter max weight" name="maxWeight" id="editMaxWeight" required maxlength="20">
+
+        <label for="type">Type:</label>
+        <input type="text" placeholder="Enter type of motocycle" name="type" id="editType" required maxlength="20">
+    </div>
+</body>
+</html>
