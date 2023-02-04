@@ -2,7 +2,7 @@
   <div id="app">
     <div >
       <b-navbar id="nav" toggleable="lg" type="dark" >
-        <b-navbar-brand to="/"><b-icon-droplet-fill variant="danger"></b-icon-droplet-fill> 6th Company</b-navbar-brand>
+        <b-navbar-brand to="/"><b-icon-award ></b-icon-award> Rental Service</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

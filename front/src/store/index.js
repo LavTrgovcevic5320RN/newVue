@@ -5,10 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    token: ''
   },
   getters: {
   },
   mutations: {
+    setToken(state, token) {
+      state.token = token;
+      localStorage.token = token;
+    },
+
+    removeToken(state) {
+      state.token = '';
+      localStorage.token = '';
+    },
   },
   actions: {
     login({ commit }, obj) {
