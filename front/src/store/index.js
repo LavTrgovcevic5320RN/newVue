@@ -21,6 +21,21 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    register({ commit }, obj) {
+      fetch('http://localhost:9000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obj)
+      }).then( res => res.json() )
+          .then( tkn => {
+            if (tkn.msg) {
+              alert(tkn.msg);
+            } else {
+              commit('setToken', tkn.token)
+            }
+          });
+    },
+
     login({ commit }, obj) {
       fetch('http://localhost:9000/login', {
         method: 'POST',

@@ -21,7 +21,7 @@ app.use(cors(corsOptions));
 app.post('/register', (req, res) => {
     const obj = {
         email: req.body.email,
-        role: req.body.role,
+        role: "User",
         password: bcrypt.hashSync(req.body.password, 10),
         
     };
