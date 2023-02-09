@@ -3,8 +3,10 @@ const { sequelize } = require('./models');
 const path = require("path");
 const joi = require('joi');
 const jwt = require('jsonwebtoken');
-const app = express();
+const history = require('connect-history-api-fallback');
 require('dotenv').config();
+
+const app = express();
 
 function getCookies(req) {
     if (req.headers.cookie == null) return {};
@@ -36,23 +38,29 @@ function authToken(req,res,next) {
     });
 };
 
-app.get('/register', (req, res) => {
-    res.sendFile('register.html', { root: './static' });
-});
+// app.get('/register', (req, res) => {
+//     res.sendFile('register.html', { root: './static' });
+// });
+//
+// app.get('/login', (req, res) => {
+//     res.sendFile('login.html', { root: './static' });
+// });
+//
+// app.get('/', authToken, (req, res) => {
+//     res.sendFile('index.html', { root: './static'});
+// });
+//
+// const adminRouter = require('./routes/admin');
+// const history = require("connect-history-api-fallback");
+//
+// app.use('/admin', adminRouter);
+//
+// app.use(express.static(path.join(__dirname,'static')));
 
-app.get('/login', (req, res) => {
-    res.sendFile('login.html', { root: './static' });
-});
-
-app.get('/', authToken, (req, res) => {
-    res.sendFile('index.html', { root: './static'});
-});
-
-const adminRouter = require('./routes/admin');
-
-app.use('/admin', adminRouter);
-
-app.use(express.static(path.join(__dirname,'static')));
+const staticMdl = express.static(path.join(__dirname, 'dist'));
+app.use(staticMdl);
+app.use(history({ index: '/index.html' }));
+app.use(staticMdl);
 
 app.listen({ port: 8000 }, async () => {
     await sequelize.authenticate();

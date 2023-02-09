@@ -11,6 +11,7 @@ const app = express();
 
 var corsOptions = {
     origin: '*',
+    // origin: 'http://localhost:8080/',
     optionsSuccessStatus: 200
 }
 
@@ -18,7 +19,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 
-app.post('/register', (req, res) => {
+app.post('/api_register', (req, res) => {
     const obj = {
         email: req.body.email,
         role: "User",
@@ -37,7 +38,7 @@ app.post('/register', (req, res) => {
     
 });
 
-app.post('/login', (req, res) => {
+app.post('/api_login', (req, res) => {
     const validEntry = userValidation.validate(req.body);
     if(validEntry.error){
         res.status(422).json({ msg: validEntry.error.message })
