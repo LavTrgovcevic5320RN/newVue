@@ -5,6 +5,8 @@ import Login from '@/views/Login.vue';
 import Register from '@/views/Register.vue';
 import Vehicle from '@/views/Vehicle.vue';
 import Vehicles from '@/views/Vehicles.vue';
+import Cars from "@/views/Cars.vue";
+import Car from "@/views/Car.vue";
 
 Vue.use(VueRouter)
 
@@ -33,7 +35,17 @@ const routes = [
     path: '/vehicles',
     name: 'Vehicles',
     component: Vehicles
-  }
+  },
+  {
+    path: '/cars',
+    name: 'Cars',
+    component: Cars
+  },
+  {
+    path: '/cars/:id',
+    name: 'Car',
+    component: Car
+  },
 ]
 
 const router = new VueRouter({

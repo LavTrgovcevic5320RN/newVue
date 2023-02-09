@@ -9,6 +9,8 @@ export default new Vuex.Store({
     reservations: [],
     vehicles: [],
     vehicle: null,
+    cars: [],
+    car: []
   },
   getters: {
   },
@@ -33,6 +35,13 @@ export default new Vuex.Store({
     },
     addReservation(state, reservation) {
       state.reservations.push(reservation);
+    },
+
+    addCars(state, allCars) {
+      state.cars = allCars;
+    },
+    getCarByID(state, singleCar){
+      state.car = singleCar;
     },
 
   },
@@ -129,6 +138,49 @@ export default new Vuex.Store({
       const comment = JSON.parse(msg);
       console.log(comment);
       commit('addReservation', comment);
+    },
+
+    fetchCars({ commit }) {
+      fetch('http://localhost:8080/api/cars', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.token}`
+        }
+      })
+          .then( obj => obj.json() )
+          .then( res => commit('addCars', res));
+    },
+
+    // fetchCars({ commit }) {
+    //   fetch('http://localhost:8080/api/cars', {
+    //     method: 'GET',
+    //     headers: { 'Authorization': `Bearer ${localStorage.token}`,
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }).then(response => {
+    //     if (!response.ok) {
+    //       throw response
+    //     }
+    //     return response.json()
+    //   }).then(cars=>{
+    //     commit('addCars', cars);
+    //   }).catch(err => {
+    //     if (typeof err.text === 'function')
+    //       err.text().then((errorMessage) => {
+    //         alert(errorMessage);
+    //       });
+    //     else
+    //       alert(err);
+    //   })
+    // },
+
+    fetchCarByID({ commit }, id) {
+      fetch(`http://localhost:8080/api/cars/${id}`,{
+        headers: {
+          'Authorization': `Bearer ${localStorage.token}`
+        }
+      })
+          .then( obj => obj.json() )
+          .then( res => commit('getCarByID', res) );
     }
 
   },
